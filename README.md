@@ -1,4 +1,8 @@
 Proyecto desarrollado en React + Vite + Bootstrap como parte del Hito 1 del curso.
 Este proyecto implementa una primera versión de la aplicación de la pizzería Mamma Mía, con componentes reutilizables, props y un layout básico.
 
+Hito numero 2.
+
+Se creo pagina de login y de registro
+
 Pagina desplegada: https://xllnakullx.github.io/Pizzeria/
