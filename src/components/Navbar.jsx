@@ -1,21 +1,19 @@
 import { clp } from '../utils/format'
 
-const Navbar = () => {
+const Navbar = ({ setView }) => {
   const total = 25000
   const token = false // true = logueado, false = no logueado (simulación)
 
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark px-3">
-      <a className="navbar-brand d-flex align-items-center gap-2" href="#">
+      <a className="navbar-brand d-flex align-items-center gap-2" href="#" onClick={() => setView('home')}>
         <span role="img" aria-label="pizza">🍕</span>
         <strong>Pizzería Mamma Mía</strong>
       </a>
 
       <div className="ms-auto d-flex gap-2">
-        {/* Home (siempre visible) */}
-        <button className="btn btn-outline-light">🍕 Home</button>
+        <button className="btn btn-outline-light" onClick={() => setView('home')}>🍕 Home</button>
 
-        {/* Botones según token */}
         {token ? (
           <>
             <button className="btn btn-outline-light">🔓 Profile</button>
@@ -23,12 +21,11 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <button className="btn btn-outline-light">🔐 Login</button>
-            <button className="btn btn-outline-light">🔐 Register</button>
+            <button className="btn btn-outline-light" onClick={() => setView('login')}>🔐 Login</button>
+            <button className="btn btn-outline-light" onClick={() => setView('register')}>🔐 Register</button>
           </>
         )}
 
-        {/* Total (siempre visible) */}
         <button className="btn btn-success">
           🛒 Total: ${clp(total)}
         </button>
